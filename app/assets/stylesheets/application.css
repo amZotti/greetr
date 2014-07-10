@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+body {
+  background-color: black;
+  color: rgb(85, 246, 35);
+}
+
+.main-greeting {
+ position: absolute;
+ margin: auto;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ width: 200px;
+ height: 200px; 
+ font-family: monospace;
+
+}
+
+.greeting {
+  background-color: gray;
+}

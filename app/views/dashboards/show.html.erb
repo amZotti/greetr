@@ -1,19 +1,20 @@
-<div>
+<div class="main-greeting">
+  <h1>Greetr</h1>
 
-<%= form_for :greet do |form| %>
+<%= form_for @greeting do |form| %>
   <div>  
     <%= form.label :message %>
     <%= form.text_field :message %>
   </div>
 
   <div>
-    <%= form.label :recipient %>
-    <%= form.select :recipient, @users %>
+    <%= form.label :recipient, "Send to: " %>
+    <%= form.collection_select :recipient_id, @users, :id, :email %>
    <div>
     <%= form.submit "send greeting" %>
   </div>
 
 <% end %>
 
-<%# render @greeting %>
+<%= render @greetings %>
 </div>
