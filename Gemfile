@@ -1,3 +1,4 @@
+gem 'dotenv-rails', :groups => [:development, :test]
 source 'https://rubygems.org'
 gem 'rails', '4.1.1'
 gem 'pg'
