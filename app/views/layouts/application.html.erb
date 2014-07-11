@@ -6,12 +6,17 @@
   <script src="//js.pusher.com/2.2/pusher.min.js" type="text/javascript"></script> 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <% if signed_in? %>
   <script>
-    window.CHANNEL = <%= current_user.id %>
-    window.PUSHER = <%= ENV['PUSHER_KEY'] %>
-</script>
+    window.CHANNEL ="<%= current_user.id %>";
+    window.PUSHER = "<%= ENV['PUSHER_KEY'] %>";
+  </script>
+<%end%>
 </head>
 <body>
+<% if signed_in? %>
+  <h2> signed in as :<%= current_user.email %> </h2>
+<% end %>
 <%= yield %>
 
 </body>
