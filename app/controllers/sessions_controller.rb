@@ -10,7 +10,8 @@ class SessionsController < ApplicationController
     if sign_in(user)
       redirect_to root_path
     else
-      render :new
+      @user = User.new
+      render "landings/show"
     end
   end
 
