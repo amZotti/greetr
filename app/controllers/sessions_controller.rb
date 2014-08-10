@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       @user = User.new
+      flash[:error] = "Login failed. Check email/password and try again please"
       render "landings/show"
     end
   end
