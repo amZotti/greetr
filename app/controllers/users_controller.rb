@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       sign_in(@user)
       redirect_to root_path
     else
-      render :new
+      render "landings/show"
     end
   end
 
