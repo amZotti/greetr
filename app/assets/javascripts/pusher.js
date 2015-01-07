@@ -9,12 +9,9 @@ $(function(){
 
   var pusher = new Pusher(window.PUSHER);
   var channel = pusher.subscribe(window.CHANNEL);
-
   channel.bind('new_greeting', function(data) {
+    console.log(data);
     $(".greetings").prepend(data.greeting);
-
   });
-
-
 });
 
